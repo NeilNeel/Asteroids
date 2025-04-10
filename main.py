@@ -56,6 +56,15 @@ def main():
                 print("Collision! Game Over!")
                 pygame.quit()
                 exit()
+            
+            # Check for shot collision
+            for shot in shots_group:
+                if CircleShape.collide(shot, asteroid):
+                    print("Shot hit asteroid!")
+                    # shot.kill()
+                    # asteroid.kill()
+                    shot.kill()
+                    asteroid.split()
 
     
         # Update the display
